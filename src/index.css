@@ -1,0 +1,46 @@
+/* @import url("https://fonts.google.com/noto/specimen/Noto+Sans"); */
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  /* Neutral */
+  --fem-neutral-900: hsl(227, 75%, 14%);
+  --fem-neutral-800: hsl(226, 25%, 17%);
+  --fem-neutral-700: hsl(225, 23%, 24%);
+  --fem-neutral-600: hsl(226, 11%, 37%);
+  --fem-neutral-300: hsl(0, 0%, 78%);
+  --fem-neutral-000: hsl(217, 61%, 90%);
+  --fem-neutral-100: hsl(0, 0%, 93%);
+  --fem-neutral-0: hsl(200, 60%, 99%);
+
+  /* Red */
+  --fem-red-400: hsl(3, 86%, 64%);
+  --fem-red-500: hsl(3, 71%, 56%);
+  --fem-red-700: hsl(3, 77%, 44%);
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-weight: 400 500 700;
+  src: url("https://fonts.google.com/noto/specimen/Noto+Sans");
+}
+
+@plugin "daisyui/theme" {
+  name: "fem-dark";
+  prefersdark: true;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+@plugin "daisyui/theme" {
+  name: "fem-light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+}
