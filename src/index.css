@@ -1,4 +1,4 @@
-/* @import url("https://fonts.google.com/noto/specimen/Noto+Sans"); */
+@import url("https://fonts.google.com/noto/specimen/Noto+Sans");
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -19,10 +19,8 @@
   --fem-red-700: hsl(3, 77%, 44%);
 }
 
-@font-face {
-  font-family: "Noto Sans";
-  font-weight: 400 500 700;
-  src: url("https://fonts.google.com/noto/specimen/Noto+Sans");
+@theme {
+  --font-display: "Noto Sans", "sans-serif";
 }
 
 @plugin "daisyui/theme" {
@@ -41,7 +39,7 @@
   --color-primary-content: oklch(96% 0.018 272.314);
   --color-secondary: oklch(65% 0.241 354.308);
   --color-secondary-content: oklch(94% 0.028 342.258);
-  --color-accent: oklch(77% 0.152 181.912);
+  --color-accent: var(--fem-red-400);
   --color-accent-content: oklch(38% 0.063 188.416);
   --color-neutral: var(--fem-neutral-900);
   --color-neutral-content: oklch(92% 0.004 286.32);

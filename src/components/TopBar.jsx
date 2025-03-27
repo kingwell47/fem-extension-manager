@@ -1,12 +1,12 @@
 import React from "react";
-import Logo from "../assets/images/logo.svg";
+
 import SunIcon from "../assets/images/icon-sun.svg";
+import MoonIcon from "../assets/images/icon-moon.svg";
+
+import { useState } from "react";
 
 const TopBar = () => {
-  const isDarkMode = true;
-
-  const logoTextFill = "#091540";
-  const logoTextFillLight = "#fbfdfe";
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
     <div className="navbar bg-base-100 shadow-sm rounded-xl h-16.5 p-3">
@@ -39,7 +39,11 @@ const TopBar = () => {
       </div>
       <div className="flex-none">
         <button className="btn btn-square rounded-xl size-12.5">
-          <img src={SunIcon} alt="Light Mode" />
+          <img
+            src={isDarkMode ? SunIcon : MoonIcon}
+            alt="Switch Theme"
+            onClick={() => setIsDarkMode(!isDarkMode)}
+          />
         </button>
       </div>
     </div>
