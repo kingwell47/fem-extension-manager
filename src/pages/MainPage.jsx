@@ -4,6 +4,15 @@ import ExtensionCard from "../components/ExtensionCard";
 
 const MainPage = () => {
   const [activeButton, setActiveButton] = useState(0);
+
+  const sampleData = {
+    logo: "./assets/images/logo-devlens.svg",
+    name: "DevLens",
+    description:
+      "Quickly inspect page layouts and visualize element boundaries.",
+    isActive: true,
+  };
+
   return (
     <div className="flex flex-col justify-center items-center gap-8">
       <TopBar />
@@ -26,7 +35,9 @@ const MainPage = () => {
           ))}
         </ul>
       </div>
-      <ExtensionCard />
+      <div className="grid grid-cols-1 w-full h-full">
+        <ExtensionCard {...sampleData} />
+      </div>
     </div>
   );
 };
