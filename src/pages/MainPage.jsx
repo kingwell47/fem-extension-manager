@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import TopBar from "../components/TopBar";
 import ExtensionCard from "../components/ExtensionCard";
 
+import extensionsData from "../data.json";
+
 const MainPage = () => {
   const [activeButton, setActiveButton] = useState(0);
 
-  const sampleData = {
-    logo: "./assets/images/logo-devlens.svg",
-    name: "DevLens",
-    description:
-      "Quickly inspect page layouts and visualize element boundaries.",
-    isActive: true,
-  };
-
   return (
-    <div className="flex flex-col justify-center items-center gap-8">
+    <>
       <TopBar />
       <div className="flex flex-col gap-6">
         <h1 className="text-4xl font-bold text-center">Extensions List</h1>
@@ -22,10 +16,10 @@ const MainPage = () => {
           {["All", "Active", "Inactive"].map((item, index) => (
             <li key={index}>
               <button
-                className={`btn rounded-3xl px-5 py-6 text-2xl font-normal shadow-none ${
+                className={`btn rounded-3xl px-5 py-6 text-xl shadow-none ${
                   activeButton == index
-                    ? `bg-accent text-neutral`
-                    : `border border-neutral-content`
+                    ? `bg-accent text-neutral font-bold`
+                    : `border border-neutral-content font-light`
                 }`}
                 onClick={() => setActiveButton(index)}
               >
@@ -35,10 +29,12 @@ const MainPage = () => {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-1 w-full h-full">
-        <ExtensionCard {...sampleData} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full h-full gap-3">
+        {extensionsData.map((item, index) => {
+          return <ExtensionCard key={index} {...item} />;
+        })}
       </div>
-    </div>
+    </>
   );
 };
 
