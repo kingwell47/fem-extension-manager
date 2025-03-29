@@ -15,7 +15,7 @@ const TopBar = () => {
   };
 
   return (
-    <div className="navbar bg-(--color-elements-main) shadow-sm rounded-xl h-16.5 p-3">
+    <div className="navbar lg:max-w-5/6 bg-(--color-elements-main) shadow-sm rounded-xl h-16.5 p-3">
       <div className="flex-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,12 +48,9 @@ const TopBar = () => {
           className={`btn btn-square rounded-xl size-12.5 ${
             darkMode(theme) ? `bg-base-200` : `bg-base-100`
           }`}
+          onClick={() => handleChange()}
         >
-          <img
-            src={darkMode(theme) ? SunIcon : MoonIcon}
-            alt="Switch Theme"
-            onClick={() => handleChange()}
-          />
+          <img src={darkMode(theme) ? SunIcon : MoonIcon} alt="Switch Theme" />
         </button>
       </div>
     </div>

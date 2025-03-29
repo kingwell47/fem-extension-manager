@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <>
       <TopBar />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 lg:max-w-5/6">
         <h1 className="text-4xl font-bold text-center">Extensions List</h1>
         <ul className="flex items-center justify-center text-center gap-3">
           {["All", "Active", "Inactive"].map((item, index) => (
@@ -29,7 +29,7 @@ const MainPage = () => {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full h-full gap-3">
+      <div className="lg:max-w-5/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full h-full gap-3">
         {extensionsData.map((item, index) => {
           return <ExtensionCard key={index} {...item} />;
         })}
