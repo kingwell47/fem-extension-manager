@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <>
       <TopBar />
-      <div className="flex flex-col gap-6 lg:max-w-5/6">
+      <div className="flex flex-col w-full lg:flex-row lg:justify-between gap-6 lg:max-w-5/6">
         <h1 className="text-4xl font-bold text-center">Extensions List</h1>
         <ul className="flex items-center justify-center text-center gap-3">
           {["All", "Active", "Inactive"].map((item, index) => (
